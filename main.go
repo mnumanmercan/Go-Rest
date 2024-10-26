@@ -1,6 +1,7 @@
 package main
 
 import (
+	"REST-API/db"
 	"REST-API/models"
 	"net/http"
 
@@ -8,6 +9,7 @@ import (
 )
 
 func main() {
+	db.InitDB()
 	server := gin.Default()
 
 	server.GET("/events", getEvents)
